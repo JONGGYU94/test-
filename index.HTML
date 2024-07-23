@@ -1,0 +1,184 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#topAndNavbar {
+		background-image:linear-gradient(
+	        rgba(0, 0, 0, 0.2),
+	        rgba(0, 0, 0, 0.2)
+	      )
+	      ,url('image/topImage.PNG');
+	    background-size: cover; 
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    transition: background-color 0.5s ease;
+	}
+	
+	#content {
+		margin-top:70px;
+		display:flex;
+		flex-direction:row;
+		justify-content:center;
+	}
+	
+	.introduce1 {
+		text-align:center;
+		
+        
+	}
+	
+	.introduce1 em{
+		
+		font-size:30px;
+		color:skyblue;
+	}
+	
+	.introduce1 h3 {
+		
+		font-size: 40px;
+		margin-top:10px;
+	}
+	
+	.introduce1 p {
+		
+		font-size: 20px;
+		margin-top:10px;
+	}
+	
+	.introduce2 {
+		background-image: url('image/introduce.PNG');
+		color:white; 
+		height:300px;
+		background-size: cover; 
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    text-align:center;
+	    margin-top:30px;
+	    
+	    
+	}
+	
+	.info {
+		list-style-type: none;
+		display:flex;
+	    flex-direction:row;
+	    justify-content:space-around;
+	    margin-top:40px;
+	}
+	
+	.info>li {
+		margin-top:70px;
+	}
+	
+	.info>li>em {
+		font-size:30px;
+		font-weight:700;
+	}
+	
+	.info>li>p>strong {
+		font-size: 60px;
+		font-weight: bold;
+	}
+	
+    
+    
+  
+	
+</style>
+</head>
+<body>
+ 	<div id="container">
+ 		<div id=topAndNavbar>
+	 		<div id="navbar-section2" onmouseover="changeBackground()" onmouseout="resetBackground()">
+		        <jsp:include page="WEB-INF/views/common/navbar.jsp" />
+		    </div>    
+		    <div id="top-section">
+		        <jsp:include page="WEB-INF/views/common/top.jsp" />
+		    </div>
+ 		</div>
+ 		<div id="voulnteer2">
+ 			<jsp:include page="WEB-INF/views/common/volunteer.jsp"/>
+ 		</div>
+	    <div id="content">
+        	<div class="introduce1">
+        		<em>A world where everyone has a decent place to live</em>
+        		<h3>모든 사람에게 안락한 집이 있는 세상</h3>
+        		<p>
+        			홈워크(Home Work)는 ‘모든 사람에게 안락한 집이 있는 세상’이라는 비전을 가지고 
+        			<br>       			
+        			1976년 미국에서 시작한 국제 주거복지 비영리단체로 열악한 주거환경으로 고통 받는 사람들을 위해 집과 마을을 짓고 희망을 전하고 있습니다.
+        			<br> 
+        			‘집’은 가난의 고리를 끊을 수 있는 근본적인 해결책이자 한 가족을 위한 따뜻한 보금자리입니다.      		
+        		</p>
+        	</div>
+	    	</div> 
+	    	<div class="introduce2">
+        		<ul class="info">
+        			<li>
+        			<em>불안정 주거환경</em>
+        			<p>
+        				<strong>1,500,000,000</strong>
+        				가구
+        			</li>
+        			<li>
+        			<em>매년 추가적인 주택 필요</em>
+        			<p>
+        				<strong>100,000,000</strong>
+        				가구
+        			</li>
+        			<li>
+        			<em>2050년까지 주택 수요 증가</em>
+        			<p>
+        				<strong>68%</strong>       				
+        			</li>
+        			<li>
+        			<em>부족한 자원봉사자 수</em>
+        			<p>
+        				<strong>20,000,000</strong>
+        				명
+        			</li>
+        		</ul>
+        	</div>
+        <div id="footer">
+ 			<jsp:include page="WEB-INF/views/common/footer.jsp"/>
+ 		</div>	
+        	
+	</div>
+	
+	<script>
+	
+    function changeBackground() {
+        const navbarSection = document.getElementById('navbar-section');
+        navbarSection.style.backgroundColor = "white";
+        const links = navbarSection.querySelectorAll('a');
+        links.forEach(function(link) {
+            link.style.color = "black";
+        });
+    }
+
+    function resetBackground() {
+        const navbarSection = document.getElementById('navbar-section');
+        navbarSection.style.backgroundColor = "transparent";
+        const links = navbarSection.querySelectorAll('a');
+        links.forEach(function(link) {
+            link.style.color = "white";
+        });
+    }
+
+	/*function changeBackground() {
+        document.getElementById('navbar-section').style.backgroundColor = "white";
+       
+    }
+
+    function resetBackground() {
+        document.getElementById('navbar-section').style.backgroundColor = "transparent";
+    }*/
+    </script>
+
+</body>
+</html>
